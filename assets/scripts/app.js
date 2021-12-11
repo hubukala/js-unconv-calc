@@ -1,15 +1,9 @@
 const deafultResult = 0;
 let currentResult = deafultResult;
 
-function sumNumbers(num1, num2){
-    const result = num1 + num2;
-    return result;
+function sumNumbers() {
+    currentResult = currentResult + userInput.value;
+    outputResult(currentResult, ' ');
 }
 
-sumNumbers()
-
-currentResult = currentResult + 10 * 3;
-
-let calculationDescription = ` ${deafultResult} + 10 * 3`;
-
-outputResult(currentResult, calculationDescription);
+addBtn.addEventListener('click', sumNumbers);
