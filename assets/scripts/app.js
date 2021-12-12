@@ -7,7 +7,7 @@ function getNumberInput() {
 
 function showOutput(operator, resultBefore, calcNumber) {
     const calcShow = `${resultBefore} ${operator} ${calcNumber}`;
-    outputResult(currentResult, calcShow)
+    outputResult(currentResult, calcShow);
 }
 
 function sumNumbers() {
@@ -32,9 +32,13 @@ function multiplyNumbers() {
 }
 
 function divideNumbers() {
-
+    const numberInput = getNumberInput();
+    const initialResult = currentResult;
+    currentResult = currentResult / numberInput;
+    showOutput('/', initialResult, numberInput);
 }
 
 addBtn.addEventListener('click', sumNumbers);
 subtractBtn.addEventListener('click', substractNumbers);
-multiplyBtn.addEventListener('click', multiplyNumbers)
+multiplyBtn.addEventListener('click', multiplyNumbers);
+divideBtn.addEventListener('click', divideNumbers);
