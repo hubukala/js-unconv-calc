@@ -22,36 +22,36 @@ function dataEntered(operationVal, prevnumVal, numVal, resultVal) {
     console.log(dataEntries);
 }
 
-function sumNumbers() {
+function makeCalculations(operation) {
     const numberInput = getNumberInput();
     const initialResult = currentResult;
-    currentResult +=  numberInput;
-    showOutput('+', initialResult, numberInput);
-    dataEntered("ADD", initialResult, numberInput, currentResult);
+    if (operation === '+') {
+        currentResult +=  numberInput;
+    } else if (operation === '-') {
+        currentResult -=  numberInput;
+    } else if (operation === '*') {
+        currentResult *=  numberInput;
+    } else if (operation === '/') {
+        currentResult /=  numberInput;
+    }
+    showOutput(operation, initialResult, numberInput);
+    dataEntered(operation, initialResult, numberInput, currentResult);
+}
+
+function sumNumbers() {
+    makeCalculations('+')
 }
 
 function substractNumbers() {
-    const numberInput = getNumberInput();
-    const initialResult = currentResult;
-    currentResult -= numberInput;
-    showOutput('-', initialResult, numberInput);
-    dataEntered("SUBSTRACT", initialResult, numberInput, currentResult);
+    makeCalculations('-')
 }
 
 function multiplyNumbers() {
-    const numberInput = getNumberInput();
-    const initialResult = currentResult;
-    currentResult *=  numberInput;
-    showOutput('*', initialResult, numberInput);
-    dataEntered("MULTIPLY", initialResult, numberInput, currentResult);
+    makeCalculations('*')
 }
 
 function divideNumbers() {
-    const numberInput = getNumberInput();
-    const initialResult = currentResult;
-    currentResult /= numberInput;
-    showOutput('/', initialResult, numberInput);
-    dataEntered("DIVIDE", initialResult, numberInput, currentResult);
+    makeCalculations('/')
 }
 
 addBtn.addEventListener('click', sumNumbers);
