@@ -24,6 +24,15 @@ function dataEntered(operationVal, prevnumVal, numVal, resultVal) {
 
 function makeCalculations(operation) {
     const numberInput = getNumberInput();
+    if (
+        operation !== '+' &&
+        operation !== '-' &&
+        operation !== '*' &&
+        operation !== '/' ||
+        numberInput === 0
+    ) {
+        return;
+    }
     const initialResult = currentResult;
     if (operation === '+') {
         currentResult +=  numberInput;
