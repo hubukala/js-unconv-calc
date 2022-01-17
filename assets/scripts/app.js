@@ -22,47 +22,6 @@ function dataEntered(operationVal, prevnumVal, numVal, resultVal) {
     console.log(dataEntries);
 }
 
-// function makeCalculations(operation) {
-//     const numberInput = getNumberInput();
-//     if (
-//         operation !== '+' &&
-//         operation !== '-' &&
-//         operation !== '*' &&
-//         operation !== '/' ||
-//         !numberInput
-//     ) {
-//         return;
-//     }
-//     const initialResult = currentResult;
-//     if (operation === '+') {
-//         currentResult +=  numberInput;
-//     } else if (operation === '-') {
-//         currentResult -=  numberInput;
-//     } else if (operation === '*') {
-//         currentResult *=  numberInput;
-//     } else if (operation === '/') {
-//         currentResult /=  numberInput;
-//     }
-//     showOutput(operation, initialResult, numberInput);
-//     dataEntered(operation, initialResult, numberInput, currentResult);
-// }
-
-// function sumNumbers() {
-//     makeCalculations('+')
-// }
-
-// function substractNumbers() {
-//     makeCalculations('-')
-// }
-
-// function multiplyNumbers() {
-//     makeCalculations('*')
-// }
-
-// function divideNumbers() {
-//     makeCalculations('/')
-// }
-
 function calculate(operation) {
     const numberInput = getNumberInput();
     const initialResult = currentResult;
