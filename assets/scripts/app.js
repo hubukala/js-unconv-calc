@@ -22,48 +22,64 @@ function dataEntered(operationVal, prevnumVal, numVal, resultVal) {
     console.log(dataEntries);
 }
 
-function makeCalculations(operation) {
+// function makeCalculations(operation) {
+//     const numberInput = getNumberInput();
+//     if (
+//         operation !== '+' &&
+//         operation !== '-' &&
+//         operation !== '*' &&
+//         operation !== '/' ||
+//         !numberInput
+//     ) {
+//         return;
+//     }
+//     const initialResult = currentResult;
+//     if (operation === '+') {
+//         currentResult +=  numberInput;
+//     } else if (operation === '-') {
+//         currentResult -=  numberInput;
+//     } else if (operation === '*') {
+//         currentResult *=  numberInput;
+//     } else if (operation === '/') {
+//         currentResult /=  numberInput;
+//     }
+//     showOutput(operation, initialResult, numberInput);
+//     dataEntered(operation, initialResult, numberInput, currentResult);
+// }
+
+// function sumNumbers() {
+//     makeCalculations('+')
+// }
+
+// function substractNumbers() {
+//     makeCalculations('-')
+// }
+
+// function multiplyNumbers() {
+//     makeCalculations('*')
+// }
+
+// function divideNumbers() {
+//     makeCalculations('/')
+// }
+
+function calculate(operation) {
     const numberInput = getNumberInput();
-    if (
-        operation !== '+' &&
-        operation !== '-' &&
-        operation !== '*' &&
-        operation !== '/' ||
-        numberInput === 0
-    ) {
-        return;
-    }
     const initialResult = currentResult;
-    if (operation === '+') {
+    if(operation === "+"){
         currentResult +=  numberInput;
-    } else if (operation === '-') {
+    } else if(operation === "-"){
         currentResult -=  numberInput;
-    } else if (operation === '*') {
+    } else if(operation === "*"){
         currentResult *=  numberInput;
-    } else if (operation === '/') {
+    } else if(operation === "/"){
         currentResult /=  numberInput;
     }
-    showOutput(operation, initialResult, numberInput);
     dataEntered(operation, initialResult, numberInput, currentResult);
+    showOutput(operation, initialResult, numberInput);
 }
 
-function sumNumbers() {
-    makeCalculations('+')
-}
-
-function substractNumbers() {
-    makeCalculations('-')
-}
-
-function multiplyNumbers() {
-    makeCalculations('*')
-}
-
-function divideNumbers() {
-    makeCalculations('/')
-}
-
-addBtn.addEventListener('click', sumNumbers);
-subtractBtn.addEventListener('click', substractNumbers);
-multiplyBtn.addEventListener('click', multiplyNumbers);
-divideBtn.addEventListener('click', divideNumbers);
+addBtn.addEventListener('click', calculate.bind(this, "+"));
+subtractBtn.addEventListener('click', calculate.bind(this, "-"));
+multiplyBtn.addEventListener('click', calculate.bind(this, "*"));
+divideBtn.addEventListener('click', calculate.bind(this, "/"));
